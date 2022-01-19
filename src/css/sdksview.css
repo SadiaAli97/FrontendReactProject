@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  color: #3FA1E3;
+}
+.toggle-options {
+  padding: 16px;
 }
 
 .App-logo {
