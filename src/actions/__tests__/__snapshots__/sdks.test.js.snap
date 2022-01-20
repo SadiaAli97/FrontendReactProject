@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sdks action loadSdkData  1`] = `[Function]`;
+
+exports[`sdks action setSelectedToggleOption  1`] = `[Function]`;

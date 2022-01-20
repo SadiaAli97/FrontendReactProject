@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SDKListItem  1`] = `
+<div
+  className="list-item"
+>
+  <div
+    className="category"
+  >
+    category
+  </div>
+  <div
+    className="items"
+  >
+    <div
+      className="item"
+    >
+      name1 undefined
+    </div>
+  </div>
+</div>
+`;
