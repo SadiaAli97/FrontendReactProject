@@ -4,15 +4,25 @@ import { SDKListItem } from '../components/SDKListItem';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { ISDKS } from '../constants/app-constants';
+import moment from 'moment';
 import '../css/tableView.css';
 
 
 export function TableView({data, selectedToggleOption}) {
   const headings = {
     heading: selectedToggleOption === ISDKS ? 'Installed SDK\'s' : 'Uninstalled SDK\'s',
-    subheading: 'Latest Update:',
+    subheading: 'Latest Update: ' + moment().format('MMM Do YYYY'),
     count: data?.length
   }
+  let categories = []
+   data.map(item => {
+    const allItems = [...item.categories];
+    allItems.map(i => {
+      if (!categories.includes(i)) {
+        categories.push(i);
+      }
+    })
+  });
   return (
     <div className='table-outline'>
       <Header
@@ -21,11 +31,11 @@ export function TableView({data, selectedToggleOption}) {
       <div className='divider' />
       <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      {data?.map(row => {
+      {categories?.map(category => {
         return <Grid item xs={6}>
           <SDKListItem
-            sdkCategory={row.categories.join(',')}
-            categoryItems={[{name: row.name, date: row.lastSeenDate || ''}]}
+            sdkCategory={category}
+            categoryItems={data.filter(row => row.categories.includes(category))}
           />
         </Grid>
       })}

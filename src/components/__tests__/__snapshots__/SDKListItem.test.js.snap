@@ -15,7 +15,7 @@ exports[`renders SDKListItem  1`] = `
     <div
       className="item"
     >
-      name1 undefined
+      name1 Invalid date
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SPACE } from '../constants/app-constants';
+import moment from 'moment';
 import '../css/sdklistitem.css';
 
 export function SDKListItem({sdkCategory, categoryItems = []}) {
@@ -12,7 +13,7 @@ export function SDKListItem({sdkCategory, categoryItems = []}) {
         {
           categoryItems.map(item => {
             return <div className='item'>
-              {item.name + SPACE + item.date}
+              {item.name + SPACE + moment(item.lastSeenDate, "YYYYMMDD").fromNow()}
             </div>
           })
         }
